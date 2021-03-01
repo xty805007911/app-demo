@@ -40,7 +40,8 @@
             </li>
           </ul>
         </nav>
-        <div class="searchico"></div>
+        
+        
       </div>
     </header>
     <div class="searchbox">
@@ -134,6 +135,22 @@ export default {
         .catch((error) => {
           this.$message.error(error);
         });
+    },
+    handleCommand(command) {
+      if (command == "info") {
+        this.$router.push("/info");
+      }
+
+      if (command == "index") {
+        this.$router.push("/");
+      }
+      if (command == "logout") {
+        this.$store.commit("logout");
+        this.$router.push("/login");
+      }
+      if (command == "password") {
+        this.$router.push("/password");
+      }
     },
   },
 };
